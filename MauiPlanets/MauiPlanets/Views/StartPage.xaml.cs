@@ -27,10 +27,12 @@ public partial class StartPage : ContentPage
         parentAnimation.Add(0.5, 0.7, new Animation(v => imgSaturn.Opacity = v, 0, 1, Easing.CubicIn));
         parentAnimation.Add(0.6, 0.8, new Animation(v => imgUranus.Opacity = v, 0, 1, Easing.CubicIn));
         parentAnimation.Add(0.7, 0.9, new Animation(v => imgNeptune.Opacity = v, 0, 1, Easing.CubicIn));
-		//Intro Box
+        //Intro Box
+        parentAnimation.Add(0.7, 1, new Animation(v => imgIntro.Opacity = v, 0, 1, Easing.CubicIn));
 
-
-		parentAnimation.Commit(this, "TransitionAnimation", 16, 3000, null, null);
-
+        parentAnimation.Commit(this, "TransitionAnimation", 16, 3000, null, null);
 	}
+
+	async void ExploreNow_Clicked(System.Object sender, System.EventArgs e)
+		=> Application.Current.MainPage = new NavigationPage(new PlanetsPage());
 }
