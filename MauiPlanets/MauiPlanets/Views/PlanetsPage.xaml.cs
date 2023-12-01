@@ -19,8 +19,8 @@ public partial class PlanetsPage : ContentPage
 
     }
 
-    private async void Planets_SelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
+    async void Planets_SelectionChanged(object sender, SelectionChangedEventArgs e)
+	{
 		await Navigation.PushAsync(new PlanetDetailsPage(e.CurrentSelection.First() as Planet));
     }
 }
